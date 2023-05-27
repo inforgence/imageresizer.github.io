@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+    <title>Image Resizer and Converter</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- SNS 공유 아이콘 -->
+  <div class="sns-buttons">
+    <a href="#" onclick="shareNaver()"><i class="fas fa-share-alt" style="color: green;"></i></a>
+    <a href="#" onclick="shareKakao()"><i class="fas fa-comments" style="color: yellow;"></i></a>
+    <a href="#" onclick="shareFacebook()"><i class="fab fa-facebook-f" style="color: blue;"></i></a>
+    <a href="#" onclick="shareTwitter()"><i class="fab fa-twitter" style="color: skyblue;"></i></a>
+    <a href="#" onclick="shareInstagram()"><i class="fab fa-instagram" style="color: purple;"></i></a>
+  </div>
+  
+  <!-- 이미지 삽입 -->
+  <div class="img-container">
+    <input type="file" id="inputImage" onchange="loadImage()" accept="image/*">
+    <canvas id="canvas"></canvas>
+  </div>
+  
+  <!-- 이미지 사이즈 조절, 형식 선택, 저장 -->
+  <div class="controls">
+    <label for="width">Width:</label>
+    <input type="number" id="width" class="input" onchange="resizeImage()">
+    <label for="height">Height:</label>
+    <input type="number" id="height" class="input" onchange="resizeImage()">
+    <label for="imgType">Select image type:</label>
+    <select id="imgType" class="select">
+        <option>png</option>
+        <option>jpeg</option>
+        <option>gif</option>
+    </select>
+    <button id="save" class="button" onclick="saveImage()">Download</button>
+  </div>
+</div>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
